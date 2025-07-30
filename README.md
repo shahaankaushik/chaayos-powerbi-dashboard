@@ -28,7 +28,7 @@ The dashboard provides insights into **monthly revenue trends, store type compar
 |-----------|-------------|
 | `Chaayos_Sales_Dashboard.pbix` | Power BI dashboard file |
 | `README.md` | Project documentation |
-| `screenshot.png` | A visual preview of the dashboard |
+| `chaayos_dashboard_screenshot.png` | A visual preview of the dashboard |
 
 ---
 
