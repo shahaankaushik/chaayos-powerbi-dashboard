@@ -52,7 +52,7 @@ This dashboard simulates how a real business like Chaayos can:
 
 ## 📸 Preview
  
-![Chaayos Dashboard Screenshot](screenshot.png)
+![Chaayos Dashboard Screenshot](chaayos_dashboard_screenshot.png)
 
 ---
 
