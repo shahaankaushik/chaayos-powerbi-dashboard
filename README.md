@@ -16,8 +16,8 @@ The dashboard provides insights into **monthly revenue trends, store type compar
 - Compares performance of different store types (e.g., High-Street, Mall, Airport)
 - Highlights which cities drive higher sales per store type
 
-### 3. **Store-Wise Insights**
-- Allows comparison of top-performing and underperforming stores
+### 3. **Store Type-Wise Insights**
+- Allows comparison of top-performing and underperforming store types
 - Helps prioritize support and strategy
 
 ---
@@ -27,8 +27,8 @@ The dashboard provides insights into **monthly revenue trends, store type compar
 | File Name | Description |
 |-----------|-------------|
 | `Chaayos_Sales_Dashboard.pbix` | Power BI dashboard file |
-| `README.md` | Project documentation (this file) |
-| `screenshot.png` *(optional)* | A visual preview of the dashboard |
+| `README.md` | Project documentation |
+| `screenshot.png` | A visual preview of the dashboard |
 
 ---
 
