@@ -111,25 +111,16 @@ SELECT * FROM metrics;
 
 
 ```
-
 -- Spark / Hive SQL note:
-```
+
 -- Replace `DATE_ADD(m.mail_date, INTERVAL 30 DAY)` with the engine-friendly form:
-```
---   Hive / Spark SQL:    date_add(m.mail_date, 30)
-```
-MySQL / BigQuery:    DATE_ADD(m.mail_date, INTERVAL 30 DAY)
---   Presto/Trino:        date_add('day', 30, m.mail_date)
+-- Hive / Spark SQL:    date_add(m.mail_date, 30)
+-- MySQL / BigQuery:    DATE_ADD(m.mail_date, INTERVAL 30 DAY)
+-- Presto/Trino:        date_add('day', 30, m.mail_date)
 
---
 -- Example replacement in the CTE join condition:
-```
 AND t.order_date BETWEEN m.mail_date AND date_add(m.mail_date, 30)
-```
 
-
-```
----
 
 PySpark DataFrame example (cohort -> metrics)
 
@@ -163,7 +154,7 @@ metrics_df = (
     .agg(
         F.countDistinct("prospect_id").alias("mailed_count"),
         F.countDistinct(F.when(F.col("first_order_date").isNotNull(), F.col("prospect_id"))).alias("converted_count"),
-        (100 * F.countDistinct(F.when(F.col("first_order_date").isNotNull(), F.col("prospect_id")))/
+        (100 * F.countDistinct(F.when(F.col("first_order_date").isNotNull(), F.col("prospect_id"))) /
          F.countDistinct("prospect_id")).alias("conversion_pct"),
         (F.sum("total_amount_30d") / F.nullif(F.countDistinct(F.when(F.col("first_order_date").isNotNull(), F.col("prospect_id"))), F.lit(0))).alias("avg_charge_per_converted"),
         (F.sum("acq_cost") / F.nullif(F.countDistinct(F.when(F.col("first_order_date").isNotNull(), F.col("prospect_id"))), F.lit(0))).alias("cac")
@@ -171,8 +162,6 @@ metrics_df = (
 )
 metrics_df.show()
 
-
-```
 
 Power BI — DAX measures (create as New Measure)
 
@@ -211,8 +200,7 @@ VAR SecondOrder =
   )
 RETURN DIVIDE(SecondOrder, [Converted Count], 0)
 
-```
 
-## ✍️ Author
+✍️ Author  
+Shahaan Kaushik
 
-**Shahaan Kaushik**
