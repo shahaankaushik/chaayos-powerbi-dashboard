@@ -109,7 +109,7 @@ metrics AS (
 )
 SELECT * FROM metrics;
 
----
+```markdown
 
 -- Spark / Hive SQL note:
 -- Replace `DATE_ADD(m.mail_date, INTERVAL 30 DAY)` with the engine-friendly form:
