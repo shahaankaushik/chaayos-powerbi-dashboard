@@ -109,6 +109,9 @@ metrics AS (
 )
 SELECT * FROM metrics;
 
+
+```
+
 -- Spark / Hive SQL note:
 -- Replace `DATE_ADD(m.mail_date, INTERVAL 30 DAY)` with the engine-friendly form:
 --   Hive / Spark SQL:    date_add(m.mail_date, 30)
@@ -119,7 +122,7 @@ SELECT * FROM metrics;
 AND t.order_date BETWEEN m.mail_date AND date_add(m.mail_date, 30)
 
 
-
+```
 ---
 
 PySpark DataFrame example (cohort -> metrics)
